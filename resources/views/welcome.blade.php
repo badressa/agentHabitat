@@ -1,62 +1,69 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Agent  Habitat</title>
-        <!-- Styles -->
-        <style>
-            
-            
-            /*bs code */
-            body{
-                background-image: url('{{ asset("images/background.png") }}');
-            }
-            #form{
-                background-color: #D4D7D9;
-            }
-            /*end of bs code */
-        </style>
-        @vite( 'resources/sass/app.scss', 'resources/js/app.js' )
-    </head>
-    <body >
-        <div class="container-fluid p-2 ">
-            <div class="row">
-                <div class="col-4 p-2">
-                    <img src="{{asset('images/3045584.png')}}" alt="">
-                </div>
-                <div class="col-4 p-2 align-content-center align-items-center">
-                    
-                    <form class="p-4 my-auto rounded" id='form' method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <h3 class="text-secondary text-center"> Connectez vous </h3>
-                        <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label text-secondary">Nom d'utilisateur</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          <div id="emailHelp" class="form-text ">ecritutre</div>
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label text-secondary">Mot de passe </label>
-                          <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3 form-check d-flex justify-content-end">
-                            <a href="">mot de passe oublié</a>
-                        </div>
-                        <div>
-                         
-                        </div>
-                        <div class="d-flex justify-content-end ">
-                            <button type="submit" class="btn btn-primary ml-auto">Connexion</button>
-                        </div>
-                        
-                      </form>
-                    
-                </div>
-            </div>
+@extends('layouts.app')
+
+@section('content')
+<div class="row mb-4">
+    <div class="col-4 p-2">
+        <img id="agentImage" src="{{asset('images/3045584.png')}}" alt="">
+    </div>
+    <div class="col-6 p-2 position-relative">
+        <h1 class="text-light position-absolute bottom-0" id="agth_header">Contactez l'agent Habitat </h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <div class="bg-white h-100 w-75 rouded-1 " id="sidenav">
+            <ul>
+                <li>
+                    Tournée 
+                </li>
+                <li>
+                    Inscription
+                </li>
+                <li>
+                    Contact
+                </li>
+            </ul>
         </div>
-    </body>
-</html>
+    </div>
+    <div class="col-8">
+
+        <button class="mr-auto btn ">Programmer une nouvel inspection </button>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+                </tr>
+            </tbody>
+            </table>
+    </div>
+</div>
+</div>
+@endsection('content')
+ 
 
 
 <!--div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
