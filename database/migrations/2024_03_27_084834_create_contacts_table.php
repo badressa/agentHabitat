@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('locataires', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->date('date_entree');
-            $table->string('tel_mobile')->nullable();
-            $table->string('adresse_mail')->nullable();
+            $table->string('nom_inspecteur');
+            $table->string('objet');
+            $table->text('message');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('locataires');
+        Schema::dropIfExists('contacts');
     }
 };

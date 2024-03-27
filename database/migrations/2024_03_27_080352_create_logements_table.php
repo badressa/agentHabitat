@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('logements', function (Blueprint $table) {
             $table->id();
+            $table->date('date_rapport');
+            $table->string('adresse_logement');
+            $table->string('type_logement');
+            $table->integer('nombre_pieces');
+            $table->integer('superficie_m2');
+            $table->string('etage');
+            $table->string('type_chauffage');
+            $table->string('toiture');
+            $table->integer('annee_construction');
+            $table->string('classe_energetique');
+            $table->boolean('conformite_R2_2020');
             $table->timestamps();
         });
     }
