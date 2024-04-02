@@ -31,6 +31,10 @@
         @vite( 'resources/sass/app.scss', 'resources/js/app.js' )
     </head>
     <body >
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
         <div class="container-fluid p-2 ">
             @yield('content')
         </div>

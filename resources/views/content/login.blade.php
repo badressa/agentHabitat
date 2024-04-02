@@ -15,12 +15,16 @@
                     <h3 class="text-secondary text-center mb-4"> Connectez vous </h3>
                     <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label text-secondary">Nom d'utilisateur</label>
-                    <input type="text"  class="form-control"  value="{{ old('email') }}" required>
-                    <div id="emailHelp" class="form-text ">ecritutre</div>
+                    <input name="email" type="text"  class="form-control"  value="{{ old('email') }}" required>
+                    <div id="emailHelp" class="form-text ">
+                        @error('email')
+                            <span>{{ $message }}</span>
+                        @enderror
+                    </div>
                     </div>
                     <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label text-secondary">Mot de passe </label>
-                    <input type="password" class="form-control" >
+                    <input name="password" type="password" class="form-control" >
                     </div>
                     <div class="mb-3 form-check d-flex justify-content-end">
                         <a href="">mot de passe oublié</a>
